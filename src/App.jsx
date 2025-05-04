@@ -1,21 +1,25 @@
-import React from "react";
+  import React from "react";
+  import Search from "./components/Search";
+  import { useState } from "react";
 
-const App = () => {
-  return (
-    <main>
-      <div className="pattern" />
+  const App = () => {
+    const [searchTerm, setSearchTerm] = useState('');
 
-      <div className="wrapper">
-        <img src="./hero.png" alt="Hero Banner" />
-        <h1>
-          Find <span className="text-gradient">Movies</span> Without a the
-          Hassle
-        </h1>
+    return (
+      <main>
+        <div className="pattern" />
 
-        <p>Search</p>
-      </div>
-    </main>
-  );
-};
+        <div className="wrapper">
+          <img src="./hero.png" alt="Hero Banner" />
+          <h1>
+            Find <span className="text-gradient">Movies</span> Without a the
+            Hassle
+          </h1>
 
-export default App;
+          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+        </div>
+      </main>
+    );
+  };
+
+  export default App;
