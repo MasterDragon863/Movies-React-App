@@ -13,7 +13,6 @@ const Search = ({ searchTerm, setSearchTerm }) => {
         onChange={(e) => setSearchTerm(e.target.value)
         }
         /> 
-            
       </div>
     </div>
   );
