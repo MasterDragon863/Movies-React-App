@@ -34,6 +34,19 @@ export const updateSearchCount = async (searchTerm, movie) => {
       });
     }
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
+
+export const getTrendingMovies = async () => {
+  try {
+    const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
+      Query.orderDesc("count"),
+      Query.limit(10),
+    ]);
+
+    return result.documents;
+  } catch (e) {
+    console.log(e);
+  }
+}
